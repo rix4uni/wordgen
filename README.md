@@ -1,2 +1,2 @@
-# wordgen
+## wordgen
 Easy wordlist generator tool
