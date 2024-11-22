@@ -6,13 +6,27 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/rix4uni/wordgen/banner"
 )
 
 func main() {
 	// Define flags
 	paths := flag.String("path", "", "Path or list of paths to add (comma-separated or a file)")
 	extensions := flag.String("e", "", "Comma separated list of extensions")
+	version := flag.Bool("version", false, "Print the version of the tool and exit.")
+	silent := flag.Bool("silent", false, "Silent mode.")
 	flag.Parse()
+
+	if *version {
+		banner.PrintBanner()
+		banner.PrintVersion()
+		return
+	}
+
+	if !*silent {
+		banner.PrintBanner()
+	}
 
 	// Read input from stdin
 	scanner := bufio.NewScanner(os.Stdin)
