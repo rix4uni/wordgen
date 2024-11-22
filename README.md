@@ -9,9 +9,9 @@ go install github.com/rix4uni/wordgen@latest
 
 ## Download prebuilt binaries
 ```
-wget https://github.com/rix4uni/wordgen/releases/download/v0.0.1/wordgen-linux-amd64-0.0.1.tgz
-tar -xvzf wordgen-linux-amd64-0.0.1.tgz
-rm -rf wordgen-linux-amd64-0.0.1.tgz
+wget https://github.com/rix4uni/wordgen/releases/download/v0.0.2/wordgen-linux-amd64-0.0.2.tgz
+tar -xvzf wordgen-linux-amd64-0.0.2.tgz
+rm -rf wordgen-linux-amd64-0.0.2.tgz
 mv wordgen ~/go/bin/wordgen
 ```
 Or download [binary release](https://github.com/rix4uni/wordgen/releases) for your platform.
