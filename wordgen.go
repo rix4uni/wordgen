@@ -47,19 +47,28 @@ func main() {
 		defer file.Close()
 		scanner := bufio.NewScanner(file)
 		for scanner.Scan() {
-			pathList = append(pathList, scanner.Text())
+			pathList = append(pathList, strings.TrimSpace(scanner.Text()))
 		}
 	} else {
 		// If comma-separated paths are provided, split them
-		pathList = strings.Split(*paths, ",")
+		for _, p := range strings.Split(*paths, ",") {
+			pathList = append(pathList, strings.TrimSpace(p))
+		}
 	}
 
-	extList := strings.Split(*extensions, ",")
+	// Split extensions and trim spaces
+	var extList []string
+	for _, e := range strings.Split(*extensions, ",") {
+		trimmed := strings.TrimSpace(e)
+		if trimmed != "" {
+			extList = append(extList, trimmed)
+		}
+	}
 
 	// Generate output
 	for _, baseURL := range baseURLs {
 		for _, path := range pathList {
-			if len(extList) > 0 && extList[0] != "" {
+			if len(extList) > 0 {
 				for _, ext := range extList {
 					fmt.Println(baseURL + "/" + path + ext)
 				}

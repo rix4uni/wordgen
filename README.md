@@ -38,7 +38,7 @@ Usage of wordgen:
 ## Usage Examples
 **Single URL, Without extensions:**
 ```
-▶ echo "https://pentestingdorks.netlify.app" | wordgen -path "github,admin"
+▶ echo "https://pentestingdorks.netlify.app" | wordgen -path "github, admin"
 
 https://pentestingdorks.netlify.app/github
 https://pentestingdorks.netlify.app/admin
@@ -46,7 +46,7 @@ https://pentestingdorks.netlify.app/admin
 
 **Single URL, With extensions:**
 ```
-▶ echo "https://pentestingdorks.netlify.app" | wordgen -path "github,admin" -e ".zip,.php"
+▶ echo "https://pentestingdorks.netlify.app" | wordgen -path "github, admin" -e ".zip, .php"
 
 https://pentestingdorks.netlify.app/github.zip
 https://pentestingdorks.netlify.app/github.php
@@ -64,7 +64,7 @@ https://pentestingdorks.netlify.app/admin
 
 **Multiple URLs with paths file, Multiple URLs, With extensions:**
 ```
-▶ cat subs.txt | wordgen -path wordlist.txt -e ".zip,.php"
+▶ cat subs.txt | wordgen -path wordlist.txt -e ".zip, .php"
 
 https://pentestingdorks.netlify.app/github.zip
 https://pentestingdorks.netlify.app/github.php
